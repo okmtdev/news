@@ -37,7 +37,7 @@ jobs:
           registry: ${{ env.regis }}
 
       - name: build & push
-        uses: docker/build-push-action@v2
+        uses: docker/build-push-action@v5
         with:
           push: true
           context: ./notifications/src/top_news_to_mm
