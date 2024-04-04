@@ -42,7 +42,6 @@ jobs:
           push: true
           context: ./notifications/src/top_news_to_mm
           file: ./notifications/src/top_news_to_mm/Dockerfile
-          #tags: ${{ env.regis }}/${{ env.repos }}:${{ github.sha }}
-          tags: "tag"
+          tags: ${{ env.regis }}/${{ env.repos }}:"tag"
           cache-from: type=gha
           cache-to: type=gha,mode=max
