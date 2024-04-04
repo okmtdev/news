@@ -7,9 +7,8 @@ $ rye run python src/main.py
 ```
 
 ```
-$ rye run python-lambda-local -f lambda_handler src/app/lambda_function.py src/test/event.json -e src/app/.env
+$ rye run python-lambda-local -f lambda_handler src/top_news_to_mm/app.py src/test/event.json -e src/app/.env
 ```
-
 
 # local lambda
 

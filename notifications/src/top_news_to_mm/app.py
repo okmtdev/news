@@ -11,7 +11,7 @@ def lambda_handler(event, context):
     mm_url = os.environ['MM_URL']
     mm_bot_user_id = os.environ['MM_BOT_USER_ID']
     mm_bot_access_token = os.environ['MM_BOT_ACCESS_TOKEN']
-    mm_tech_news_channel_id = os.environ['MM_TECH_NEWS_CHANNEL_ID']
+    mm_news_channel_id = os.environ['MM_NEWS_CHANNEL_ID']
     news_api_top_url = os.environ['NEWS_API_TOP_URL']
     news_api_key = os.environ['NEWS_API_KEY']
 
@@ -24,11 +24,11 @@ def lambda_handler(event, context):
         'verify': False
     })
 
-    msg = f'=====\*===== **Happy Daily Tech News ! {today}** =====\*======\n'
+    msg = f'=====\*===== **Happy Daily News ! {today}** =====\*======\n'
 
     headers = {'X-Api-Key': news_api_key}
     params = {
-        'category': 'technology',
+        'category': 'business',
         'country': 'jp',
     }
 
@@ -44,11 +44,9 @@ def lambda_handler(event, context):
 
     md.login()
     md.posts.create_post(options={
-        'channel_id': mm_tech_news_channel_id,
+        'channel_id': mm_news_channel_id,
         'message': msg
     })
     md.logout()
 
     return f"finished at {today}"
-
-    return "Hello world"
