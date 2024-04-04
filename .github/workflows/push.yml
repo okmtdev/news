@@ -42,6 +42,7 @@ jobs:
           push: true
           context: ./notifications/src/top_news_to_mm
           file: ./notifications/src/top_news_to_mm/Dockerfile
-          tags: ${{ env.regis }}/${{ env.repos }}:tag
+          tags: ${{ env.regis }}/${{ env.repos }}:1.0.0, ${{ env.regis }}/${{ env.repos }}:latest
+          labels: version=1.0.0, maintainer=okmtdev@google.com
           cache-from: type=gha
           cache-to: type=gha,mode=max
